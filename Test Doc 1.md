@@ -1,6 +1,6 @@
 This is a Test.
 
-This is a Test.
+This is a Test
 
 # Edgar is so cute! 
 

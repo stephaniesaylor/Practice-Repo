@@ -26,4 +26,4 @@ This is a Test.
 
 ![Edgar](Edgar-sweater.png)
 
-Look at this other cutie ![Tritie](tritie-halloween2011.png)
+All done.

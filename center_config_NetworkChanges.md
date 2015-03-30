@@ -41,8 +41,8 @@ To configure the types of images that the server accepts:
 As an example, the default value of marketplace.acceptableImageTypes is as follows:
 
 marketplace.acceptableImageTypes = [
-    'image/png': 'png',
-    'image/jpeg': 'jpg',
-    'image/webp': 'webp',
-    'image/svg+xml': 'svg'
+'image/png': 'png',
+'image/jpeg': 'jpg',
+'image/webp': 'webp',
+'image/svg+xml': 'svg'
 ]

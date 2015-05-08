@@ -1,3 +1,5 @@
+<link href="http://kevinburke.bitbucket.org/markdowncss/markdown.css" rel="stylesheet"></link>
+
 #Legacy APIs#
 The legacy APIs allowed you to query metadata about users, widgets, dashboards and server version. 
 The API uses REST principles; you can use your browser to access URLs and interact with it.
@@ -11,12 +13,12 @@ All examples in this document use the following base URL:
 ##User API Overview##
 You can use the User Preference APIs find (GET) a current user's information (MAKE MORE SPECIFIC) or update his or her preferences in a number of ways (DELETE, SET, etc.). 
 
-<table style="width:100%">
+<table style="width:55%">
   <thead>
     <td>Field </td>
     <td> Method </td>
     <td>Request URL</td
-    <td>Description</td
+    <td>Description</td>
   </thead>
   <tr>
     <td><b><a href=https://github.com/stephaniesaylor/Practice-Repo/blob/master/deleteUserPreference.md>"/deleteUserPreference(cfg)"</a></b></td>

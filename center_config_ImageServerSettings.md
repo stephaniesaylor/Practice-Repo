@@ -1,3 +1,5 @@
+
+
 ##Image Servers
 ###Configure Image Server backend location and file type
 This section explains how to change the location where images are stores and change the types of images that are accepted on the Listing Create/Edit Form.
@@ -27,11 +29,11 @@ To configure the types of images that the server accepts:
 
 As an example, the default value of marketplace.acceptableImageTypes is as follows:
 
-`marketplace.acceptableImageTypes = [
-'image/png': 'png',
-'image/jpeg': 'jpg',
-'image/webp': 'webp',
-'image/svg+xml': 'svg'
-]`
+    marketplace.acceptableImageTypes = [
+    'image/png': 'png',
+    'image/jpeg': 'jpg',
+    'image/webp': 'webp',
+    'image/svg+xml': 'svg'
+    ]
 
  This configuration accepts PNG, JPEG, WebP and SVG images that will be saved with the file extensions .png, .jpg, .webp and .svg, respectfully.  

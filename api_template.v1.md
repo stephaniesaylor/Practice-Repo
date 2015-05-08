@@ -1,4 +1,4 @@
-<link href="http://kevinburke.bitbucket.org/markdowncss/markdown.css" rel="stylesheet"></link>
+
 
 #Legacy APIs#
 The legacy APIs allowed you to query metadata about users, widgets, dashboards and server version. 

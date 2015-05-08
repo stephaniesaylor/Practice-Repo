@@ -17,8 +17,8 @@ You can use the User Preference APIs find (GET) a current user's information (MA
   <thead>
     <td>Field </td>
     <td> Method </td>
-    <td>Request URL</td
-    <td>Description</td>
+    <td>Request URL</td>
+    <td>Description </td>
   </thead>
   <tr>
     <td><b><a href=https://github.com/stephaniesaylor/Practice-Repo/blob/master/deleteUserPreference.md>"/deleteUserPreference(cfg)"</a></b></td>
@@ -59,8 +59,8 @@ You can use the User Preference APIs find (GET) a current user's information (MA
   <thead>
     <td>Field </td>
     <td>Method </td>
-    <td>Request URL</td
-    <td>Description</td
+    <td>Request URL</td>
+    <td>Description</td>
   </thead>
   <tr>
     <td><b>/findWidgets(cfg)</b></td>
@@ -89,8 +89,8 @@ You can use the User Preference APIs find (GET) a current user's information (MA
   <thead>
     <td>Field </td>
     <td>Method </td>
-    <td>Request URL</td
-    <td>Description</td
+    <td>Request URL</td>
+    <td>Description</td>
   </thead>
   <tr>
     <td><b>/cloneDashboard(cfg)</b></td>
@@ -162,8 +162,8 @@ You can use the User Preference APIs find (GET) a current user's information (MA
   <thead>
     <td>Field </td>
     <td>Method </td>
-    <td>Request URL</td
-    <td>Description</td
+    <td>Request URL</td>
+    <td>Description</td>
   </thead>
   <tr>
     <td><b>/getServerVersion(cfg)</b></td>

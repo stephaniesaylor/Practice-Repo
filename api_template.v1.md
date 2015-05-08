@@ -19,7 +19,7 @@ You can use the User Preference APIs find (GET) a current user's information (MA
     <td>Description</td
   </thead>
   <tr>
-    <td><b><a href=C:\Users\ssaylor\Desktop\BUILD\Practice-Repo\deleteUserPreference.md>"/deleteUserPreference(cfg)"</a></b></td>
+    <td><b><a href=https://github.com/stephaniesaylor/Practice-Repo/blob/master/deleteUserPreference.md>"/deleteUserPreference(cfg)"</a></b></td>
     <td>POST 
         (Form_Method: Delete)</td> 
         <td>https://localhost:8443/owf/prefs/preference/com.company.widget/First%20President</td>

@@ -40,12 +40,13 @@ Use it to delete user preferences.
 
 
 Example cfg used for Preferences
-var cfg = {
-	namespace: 'com.company.widget',
-	name: 'First President',
-	onSuccess: onSuccess,
-	onFailure: onFailure
-};
+
+    var cfg = {
+	    namespace: 'com.company.widget',
+	    name: 'First President',
+	    onSuccess: onSuccess,
+	    onFailure: onFailure
+    };
 
 
 

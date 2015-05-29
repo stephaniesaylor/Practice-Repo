@@ -1,26 +1,62 @@
-#<b>API Object: /deleteUserPreference (cfg)</b>#
+#<b>API Object: OWF.Preferences.deleteUserPreference (cfg)</b>#
 
 #####<i>Definition:</i> 
-Use the `/deleteUserPreference` API to remove a user preference based on its namespace and name. The preference could be user metadata such as name, email, etc. IS THAT RIGHT????  
+Use the `/deleteUserPreference` API to remove a user preference based on its namespace and name. The preference could be user metadata such as name, email, etc.
+
+ 
 
 #####<i>How it works:</i>#####
 A system makes a call to another system that asks to reference data instead of return it. To make this call, one of the following REST Calls will request user data from the user profile URI [IS THIS RIGHT?] 
 
-#####<i>Request:</i>#####
+#####<i>Method:</i>#####
+POST, Form_Method:Delete
+
+#####<i>Request URL:</i>#####
+
+https://localhost:8443/marketplace/api/prefs/preference/com.company.widget/First%20President
+
+
+#####<i>Requirements:</i>#####
+ The call must include <b>namespace and name </b>
+ 
+- If namespace or name are null, it will change the null to 'undefined' and search for a namespace and/or name that is called 'undefined'.
+- If name is “” (empty but not null). It will not throw an error but will also not delete anything.
+
+- If namespace is “” (empty but not null) it will throw an error since the url will be “prefs/preference//name” and that is not a valid url.
 
 #####<i>Response:</i>#####
-
+Returns: {“success”:true, “preference”:null} regardless of if something was actually deleted.
 
 #####<i>How to find it:</i>#####
 
 
 #####<i>How to use it:</i>#####
-
+Use it to delete user preferences.
 
 
 
 <hr>
 ###<b>Example</b>###
+
+
+Example cfg used for Preferences
+var cfg = {
+	namespace: 'com.company.widget',
+	name: 'First President',
+	onSuccess: onSuccess,
+	onFailure: onFailure
+};
+
+
+
+
+
+
+
+
+
+###OLD EXAMPLE 
+
 The following is an example of a complete preference object passed to the onSuccess
 function:
 
@@ -92,20 +128,7 @@ function:
     <td><b>Action</b></td>
   </thead>
   <tr>
-    <td>401: You are not authorized to access this entity</td>
-    <td>Seek authorization from the server administrator</td> 
+    <td>HTTP Status 403: Access to the specified resource () has been forbidden” when namespace is blank.</td>
+    <td>Enter a preference name in the namespace.</td> 
   </tr> 
-  <tr>
-    <td>500: An unexpected error occurred</td>
-    <td>Retry the call, then, if the error occurs a second time DO WHAT????</td> 
-  </tr>
-  <tr>
-    <td>404: The user preference was not found</td>
-    <td>The preference may not exist; to look for it DO WHAT????</td> 
-  </tr>   
-  <tr>
-    <td>400: The requested entity failed to pass validation</td>
-    <td>I HAVE NO IDEA????</td> 
-  </tr>
- <tr>
 </table> 

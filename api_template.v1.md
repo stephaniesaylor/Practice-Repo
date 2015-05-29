@@ -7,7 +7,7 @@ The first section of this document provides a brief overview of the API, detaile
 ##Base URL##
 All examples in this document use the following base URL:
 
-    https://localhost:8443/OWF/Preferences/ IS THIS RIGHT???!!!!????
+    https://localhost:8443/marketplace/api/prefs/
 
 
 ##User API Overview##
@@ -15,41 +15,48 @@ You can use the User Preference APIs find (GET) a current user's information (MA
 
 <table style="width:55%">
   <thead>
-    <td>Field </td>
-    <td> Method </td>
-    <td>Request URL</td>
-    <td>Description </td>
+    <td>Call </td>
+    <td> Response Description </td>
   </thead>
   <tr>
-    <td><b><a href=https://github.com/stephaniesaylor/Practice-Repo/blob/master/deleteUserPreference.md>"/deleteUserPreference(cfg)"</a></b></td>
-    <td>POST 
-        (Form_Method: Delete)</td> 
-        <td>https://localhost:8443/owf/prefs/preference/com.company.widget/First%20President</td>
-    <td>Deletes a user preference with the provided namespace and name.</td>
+    <td><b>/getCurrentUser(cfg)</b></td>
+    <td></td> 
+  </tr>
+</table>
+
+##Preference API Overview##
+You can use the User Preference APIs find (GET) a current user's information (MAKE MORE SPECIFIC) or update his or her preferences in a number of ways (DELETE, SET, etc.). 
+
+<table style="width:100%">
+  <thead>
+    <td>Call</td>
+    <td>Response Description and Example</td>
+  </thead>
+  <tr>
+    <td><b><a href=https://github.com/stephaniesaylor/Practice-Repo/blob/master/deleteUserPreference.md>"OWF.Preferences.deleteUserPreference(cfg)"</a></b></td>
+    <td> The preference was deleted.
+    <br>
+    var cfg = { <br>
+  	namespace: 'com.company.widget', <br>
+	name: 'First President', <br>
+	onSuccess: onSuccess, <br>
+	onFailure: onFailure 
+};
+
+</td> 
+        
   </tr>
   <tr>
     <td><b>/doesUserPreferenceExist(cfg)</b></td>
-    <td>GET</td> 
-    <td>https://localhost:8443/owf/prefs/hasPreference/foo.bar.0/test%20path%20entry%200?version=7.14.1-v1&dojo.preventCache=1425324415713</td>
-    <td>Description</td>
-  </tr>
-  <tr>
-    <td><b>/getCurrentUser(cfg)</b></td>
-    <td>GET</td> 
-    <td>https://localhost:8443/owf/prefs/person/whoami?version=7.14.1-v1&dojo.preventCache=1425324499182</td>
-    <td>Description</td>
+    <td> </td> 
   </tr>
   <tr>
     <td><b>/getUserPreference(cfg)</b></td>
-    <td>GET</td> 
-    <td>https://localhost:8443/owf/prefs/preference/com.company.widget/First%20President?version=7.14.1-v1&dojo.preventCache=1425328416823</td>
-    <td>Description</td>
+    <td> </td> 
   </tr>
   <tr>
     <td><b>/setUserPreference(cfg)</b></td>
-    <td>POST</td> 
-    <td>https://localhost:8443/owf/prefs/preference/com.company.widget/First%20President</td>
-    <td>Description</td>
+    <td></td> 
   </tr>
 </table>
 

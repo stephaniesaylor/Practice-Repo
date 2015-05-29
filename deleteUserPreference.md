@@ -8,13 +8,12 @@ Use the `/deleteUserPreference` API to remove a user preference based on its nam
 #####<i>How it works:</i>#####
 A system makes a call to another system that asks to reference data instead of return it. To make this call, one of the following REST Calls will request user data from the user profile URI [IS THIS RIGHT?] 
 
-#####<i>Method:</i>#####
-POST, Form_Method:Delete
-
 #####<i>Request URL:</i>#####
 
 https://localhost:8443/marketplace/api/prefs/preference/com.company.widget/First%20President
 
+#####<i>Request Method:</i>#####
+POST, Form_Method:Delete
 
 #####<i>Requirements:</i>#####
  The call must include <b>namespace and name </b>
@@ -25,9 +24,13 @@ https://localhost:8443/marketplace/api/prefs/preference/com.company.widget/First
 - If namespace is “” (empty but not null) it will throw an error since the url will be “prefs/preference//name” and that is not a valid url.
 
 #####<i>Response:</i>#####
-Returns: {“success”:true, “preference”:null} regardless of if something was actually deleted.
 
-#####<i>How to find it:</i>#####
+If the system could not find a matching preference and there was not an error it returns:<br>
+
+`{“success”:true, “preference”:null}`
+
+If a preference was deleted the system returns:<br>
+`{"id":7,"namespace":”com.company.widget”,"path":"First President","value":"foo val","user":{"userId":"testUser1"}}`
 
 
 #####<i>How to use it:</i>#####
@@ -39,39 +42,8 @@ Use it to delete user preferences.
 ###<b>Example</b>###
 
 
-Example cfg used for Preferences
+The following is an example of a call to delete user preference:
 
-    var cfg = {
-	    namespace: 'com.company.widget',
-	    name: 'First President',
-	    onSuccess: onSuccess,
-	    onFailure: onFailure
-    };
-
-
-
-
-
-
-
-
-
-###OLD EXAMPLE 
-
-The following is an example of a complete preference object passed to the onSuccess
-function:
-
-    {
-    	"value":"true",
-    	"path":"militaryTime",
-    	"user":
-    	{
-    		"userId":"testAdmin1"
-    	},
-    	"namespace":"com.mycompany.AnnouncingClock"
-    }
-
-...
 
     function onSuccess(pref){
     	alert(pref.value);
@@ -82,12 +54,16 @@ function:
     	alert(status);
     }
     
-    OWF.Preferences.deleteUserPreference({
-    	namespace:'com.company.widget',
-    	name:'First President',
-    	onSuccess:onSuccess,
-    	onFailure:onFailure
-    });
+
+    var cfg = {
+	    namespace: 'com.company.widget',
+	    name: 'First President',
+	    onSuccess: onSuccess,
+	    onFailure: onFailure
+    };
+
+
+    OWF.Preferences.deleteUserPreference(cfg);
 
 
 

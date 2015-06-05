@@ -29,34 +29,53 @@ You can use the User Preference APIs find (GET) a current user's information (MA
 
 <table style="width:100%">
   <thead>
-    <td>Call</td>
-    <td>Response Description and Example</td>
+    <td><b>Call</b></td>
+    <td><b>Response Description and Example</b></td>
   </thead>
   <tr>
     <td><b><a href=https://github.com/stephaniesaylor/Practice-Repo/blob/master/deleteUserPreference.md>"OWF.Preferences.deleteUserPreference(cfg)"</a></b></td>
     <td> The preference was deleted.
     <br>
     var cfg = { <br>
-  	namespace: 'com.company.widget', <br>
-	name: 'First President', <br>
-	onSuccess: onSuccess, <br>
-	onFailure: onFailure 
+  	<b>namespace:</b> 'com.company.widget', <br>
+	<b>name:</b> 'First President', <br>
+	<b>onSuccess:</b> onSuccess, <br>
+	<b>onFailure:</b> onFailure 
 };
 
 </td> 
         
   </tr>
   <tr>
-    <td><b>/doesUserPreferenceExist(cfg)</b></td>
-    <td> </td> 
+    <td><b><a href=https://github.com/stephaniesaylor/Practice-Repo/blob/master/doesUserPreferenceExist.md>"OWF.Preferences.doesUserPreferenceExist(cfg)"</a></b></td></td>
+    <td> {"preferenceExist":true,"statusCode":200}</td> 
   </tr>
   <tr>
-    <td><b>/getUserPreference(cfg)</b></td>
-    <td> </td> 
+    <td><b><a href=https://github.com/stephaniesaylor/Practice-Repo/blob/master/getUserPreference.md>"OWF.Preferences.getUserPreference(cfg)"</a></b></td>
+    <td>{
+	"<b>id</b>":157,<br>
+	"<b>namespace</b>":"foo.bar.0",<br>
+	"<b>path</b>":"testpath0",<br>
+	"<b>value</b>":"fooval",<br>
+	"<b>user</b>":{
+		"userId":"testAdmin1"
+	}
+}
+ </td> 
   </tr>
   <tr>
-    <td><b>/setUserPreference(cfg)</b></td>
-    <td></td> 
+    <td><b><a href=https://github.com/stephaniesaylor/Practice-Repo/blob/master/setUserPreference.md>"OWF.Preferences.setUserPreference(cfg)"</a></b></td>
+    <td>Returns the preference that was set. <br>
+    {
+	"<b>id</b>":157,<br>
+	"<b>namespace</b>":"foo.bar.0",<br>
+	"<b>path</b>":"testpath0",<br>
+	"<b>value</b>":"fooval",<br>
+	"<b>user</b>":{
+		"userId":"testAdmin1"
+	}
+}
+</td> 
   </tr>
 </table>
 

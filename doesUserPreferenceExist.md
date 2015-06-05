@@ -1,7 +1,7 @@
-#<b>API Object: OWF.Preferences.deleteUserPreference (cfg)</b>#
+#<b>API Object: OWF.Preferences.doesUserPreferenceExist (cfg)</b>#
 
 #####<i>Definition:</i> 
-Use the `/deleteUserPreference` API to remove a user preference based on its namespace and name. The preference could be user metadata such as name, email, etc.
+Use the `/doesUserPreferenceExist` API to query if they system includes a specific user preference. It will search based on preferences' namespaces and names. 
 
  
 
@@ -10,32 +10,30 @@ A system makes a call to another system that asks to reference data instead of r
 
 #####<i>Request URL:</i>#####
 
-https://localhost:8443/marketplace/api/prefs/preference/com.company.widget/First%20President
+https://localhost:8443/owf/prefs/hasPreference/com.company.widget/First%20President?version=7.15.0-v1&dojo.preventCache=1433169029635
 
 #####<i>Request Method:</i>#####
-POST, Form_Method:Delete
+GET, Form_Method:none
 
 #####<i>Requirements:</i>#####
  The call must include <b>namespace and name </b>
  
 - If namespace or name are null, it will change the null to 'undefined' and search for a namespace and/or name that is called 'undefined'.
-- If name is “” (empty but not null). It will not throw an error but will also not delete anything.
-
-- If namespace is “” (empty but not null) it will throw an error since the url will be “prefs/preference//name” and that is not a valid url.
+- If name or namespace use an empty string that is not null, the query returns the HTML 404 error "The requested resource is not available." 
 
 #####<i>Response:</i>#####
 
-If the system could not find a matching preference and there was not an error it returns:<br>
+If there is a preference matching the namespace and name it will return:
 
-`{“success”:true, “preference”:null}`
+`{"preferenceExist":true,"statusCode":200}`
 
-If a preference was deleted the system returns:<br>
-`{"id":7,"namespace":”com.company.widget”,"path":"First President","value":"foo val","user":{"userId":"testUser1"}}`
+If there is not a matching preference it will return:
+
+`{"preferenceExist":false,"statusCode":200}`
 
 
 #####<i>How to use it:</i>#####
-Use it to delete user preferences.
-
+Use it to find user preferences.
 
 
 <hr>
@@ -45,25 +43,19 @@ Use it to delete user preferences.
 The following is an example of a call to delete user preference:
 
 
-    function onSuccess(pref){
-    	alert(pref.value);
+    function onSuccess(pref) {alert(pref.value);}
+    function onFailure(error,status) {
+	    alert('Error ' + error);
+	    alert(status);
     }
-    
-    function onFailure(error,status){
-    	alert('Error ' + error);
-    	alert(status);
-    }
-    
-
     var cfg = {
-	    namespace: 'com.company.widget',
-	    name: 'First President',
-	    onSuccess: onSuccess,
-	    onFailure: onFailure
+        namespace: 'com.company.widget',
+        name: 'First President',
+        onSuccess: onSuccess,
+        onFailure: onFailure
     };
 
-
-    OWF.Preferences.deleteUserPreference(cfg);
+    OWF.Preferences.doesUserPreferenceExist(cfg);
 
 
 
@@ -75,7 +67,7 @@ The following is an example of a call to delete user preference:
   </thead>
   <tr>
     <td>{Object} cfg</td>
-    <td>Use the following properties to configure the object.</td> 
+    <td>Use the following properties to configure the object. EXAMPLE???</td> 
     </tr>
   <tr>
     <td>{String} cfg.namespace</td>
@@ -105,7 +97,7 @@ The following is an example of a call to delete user preference:
     <td><b>Action</b></td>
   </thead>
   <tr>
-    <td>HTTP Status 403: Access to the specified resource () has been forbidden” when namespace is blank.</td>
-    <td>Enter a preference name in the namespace.</td> 
+    <td>HTTP Status 404: “The requested resource is not available”</td>
+    <td>Enter a preference name and namespace.</td> 
   </tr> 
 </table> 

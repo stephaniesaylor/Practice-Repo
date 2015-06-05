@@ -80,32 +80,24 @@ You can use the User Preference APIs find (GET) a current user's information (MA
 </table>
 
 ##Widget API Overview##
+You can use the Widget APIs to get specific information about a widget, find a widget or update and delete widgets.
 
 <table style="width:100%">
   <thead>
-    <td>Field </td>
-    <td>Method </td>
-    <td>Request URL</td>
-    <td>Description</td>
+    <td><b>Call</td>
+    <td><b>Response Description and Example</b></td>
   </thead>
   <tr>
-    <td><b>/findWidgets(cfg)</b></td>
-    <td>POST 
-        (Form_Method: GET)</td> 
-        <td>https://localhost:8443/owf/prefs/widget/listUserAndGroupWidgets</td>
-    <td></td>
+    <td><b><a href=https://github.com/stephaniesaylor/Practice-Repo/blob/master/findWidget.md>"OWF.Preferences.findWidget(cfg)"</a></b></td>
+    <td>The whole widgetID (this includes all of the widgets metadata) for every widget in the system.</b></td>
   </tr>
   <tr>
-    <td><b>/getWidget(cfg)</b></td>
-    <td>GET</td> 
-    <td>https://localhost:8443/owf/prefs/widget/eb5435cf-4021-4f2a-ba69-dde451d12551?version=7.14.1-v1&dojo.preventCache=1425328472680</td>
-    <td>Description</td>
+    <td><b><a href=https://github.com/stephaniesaylor/Practice-Repo/blob/master/getWidget.md>"OWF.Preferences.getWidget(cfg)"</a></b></td>
+    <td>The whole widgetID (this includes all of the widgets metadata)</td> 
   </tr>
   <tr>
     <td><b>/updateAndDeleteWidgets(cfg)</b></td>
     <td></td> 
-    <td></td>
-    <td>Description</td>
   </tr>
 </table>
 

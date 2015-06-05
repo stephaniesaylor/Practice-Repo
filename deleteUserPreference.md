@@ -1,4 +1,4 @@
-#<b>API Object: OWF.Preferences.deleteUserPreference (cfg)</b>#
+#<b>API Object: OWF.Preferences.deleteUserPreference(cfg)</b>#
 
 #####<i>Definition:</i> 
 Use the `/deleteUserPreference` API to remove a user preference based on its namespace and name. The preference could be user metadata such as name, email, etc.

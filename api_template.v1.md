@@ -105,89 +105,61 @@ You can use the Widget APIs to get specific information about a widget, find a w
 ##Dashboard API Overview##
 <table style="width:100%">
   <thead>
-    <td>Field </td>
-    <td>Method </td>
-    <td>Request URL</td>
-    <td>Description</td>
+  <thead>
+    <td><b>Call</td>
+    <td><b>Response Description and Example</b></td>
   </thead>
   <tr>
-    <td><b>/cloneDashboard(cfg)</b></td>
-    <td>POST</td> 
-    <td>https://localhost:8443/owf/stack/addPage</td>
-    <td></td>
+    <td>/cloneDashboard(cfg)</td>
+    <td>...</td> 
   </tr>
   <tr>
-    <td><b>/createOrUpdateDashboard(cfg)</b></td>
-    <td>POST</td> 
-    <td>https://localhost:8443/owf/stack/addPage</td>
-    <td></td>
+    <td>/createOrUpdateDashboard(cfg)</td>
+    <td>...</td> 
   </tr>
   <tr>
-    <td><b>/createOrUpdateDashboard(cfg)</b></td>
-    <td>POST</td> 
-    <td>https://localhost:8443/owf/prefs/dashboard/9c01a5f5-b37e-47db-8c07-d733c368dab5</td>
-    <td></td>
+    <td>/createOrUpdateDashboard(cfg)</td>
+    <td>...</td> 
   </tr>
   <tr>
-    <td><b>/deleteDashboard(cfg)</b></td>
-    <td>POST
-        Form_method: DELETE</td> 
-    <td>https://localhost:8443/owf/prefs/dashboard/9c01a5f5-b37e-47db-8c07-d733c368dab5</td>
-    <td></td>
+    <td>/deleteDashboard(cfg)</td>
+    <td>...</td> 
   </tr>
   <tr>
-    <td><b>/findDashboards(cfg)</b></td>
-    <td>GET</td> 
-    <td>https://localhost:8443/owf/prefs/dashboard?version=7.14.1-v1&dojo.preventCache=1425324449792</td>
-    <td></td>
+    <td>/findDashboards(cfg)</td>
+    <td>...</td> 
   </tr>
   <tr>
-    <td><b>/findDashboardsByType(cfg)</b></td>
-    <td>POST
-      Form_method: PUT</td> 
-    <td>https://localhost:8443/owf/prefs/dashboard/cbf2bd69-ad7e-44f7-bf75-c838048a9c43?isdefault=true</td>
-    <td></td>
+    <td>/findDashboardsByType(cfg)</td>
+    <td>...</td> 
   </tr>
   <tr>
-    <td><b>/getDashboard(cfg)</b></td>
-    <td>GET</td> 
-    <td>https://localhost:8443/owf/prefs/dashboard/43821977-fcfe-496a-a221-bc97967c3215?version=7.14.1-v1&dojo.preventCache=1425324659938</td>
-    <td></td>
+    <td>/getDashboard(cfg)</td>
+    <td>...</td> 
   </tr>
   <tr>
-    <td><b>/getDefaultDashboard(cfg)</b></td>
-    <td>POST</td> 
-    <td>https://localhost:8443/owf/prefs/dashboard?isdefault=true</td>
-    <td></td>
+    <td>/getDefaultDashboard(cfg)</td>
+    <td>...</td> 
   </tr>
   <tr>
-    <td><b>/setDefaultDashboard(cfg)</b></td>
-    <td>POST
-        Form_method: PUT</td> 
-    <td>https://localhost:8443/owf/prefs/dashboard/cbf2bd69-ad7e-44f7-bf75-c838048a9c43?isdefault=true</td>
-    <td></td>
+    <td>/setDefaultDashboard(cfg)</td>
+    <td>...</td> 
   </tr>
   <tr>
-    <td><b>/updateAndDeleteDashboards(cfg)</b></td>
-    <td>???</td> 
-    <td>https://localhost:8443/owf/prefs/dashboard/????</td>
-    <td></td>
+    <td>/updateAndDeleteDashboards(cfg)</td>
+    <td>...</td> 
   </tr>
 </table>
 
 ##MISC API Overview##
 <table style="width:100%">
   <thead>
-    <td>Field </td>
-    <td>Method </td>
-    <td>Request URL</td>
-    <td>Description</td>
+    <td><b>Call</b></td>
+    <td><b>Response Description and Example </b></td>
   </thead>
   <tr>
-    <td><b>/getServerVersion(cfg)</b></td>
-    <td>GET</td> 
-    <td>https://localhost:8443/owf/prefs/server/resources?version=7.14.1-v1&dojo.preventCache=1425324688929</td>
-    <td></td>
+    <td>/getServerVersion(cfg)</td>
+    <td>...</td> 
   </tr>
 </table>
 

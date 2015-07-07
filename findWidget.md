@@ -9,7 +9,7 @@ A system makes a call to OWF asking for metadata about every widget. To make thi
 
 #####<i>Request URL:</i>#####
 
-ttps://localhost:8443/owf/prefs/widget/listUserAndGroupWidgets
+ttps://localhost:8443/marketplace/prefs/widget/listUserAndGroupWidgets
 
 #####<i>Request Method:</i>#####
 POST <BR> 

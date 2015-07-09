@@ -1,15 +1,15 @@
-#<b>API Object: marketplace.category</b>#
+#<b>API Object: marketplace.type</b>#
 
 #####<i>Definition:</i> 
-Use the `/category` API to create or return a category or list of categories in the system. 
+Use the `/type` API to create or return a type or list of types in the system. 
  
 
 #####<i>How it works:</i>#####
-A system makes a call to Marketplace asking to create or view a category or list of categories. To make this call, one of the following REST Calls will request a category media type. **????Is this right?**  
+A system makes a call to Marketplace asking to create or view a type or list of types. To make this call, one of the following REST Calls will request a type media type. **????Is this right?**  
 
 #####<i>Request URL:</i>#####
 
-https://localhost:8443/marketplace/api/category 
+https://localhost:8443/marketplace/api/type 
 
 #####<i>Request Method:</i>#####
 POST, GET, Form_Method:none  **???? where do i find form method?**
@@ -20,15 +20,15 @@ none
 Optional: offset, max
 
 #####<i>Response:</i>#####
-Marketplace returns the matching category ID, as shown below. However, if the ID is an empty string, Marketplace will return a list of all categories.
+Marketplace returns the matching type ID, as shown below. However, if the ID is an empty string, Marketplace will return a list of all types.
 
 {
-  "id": 9,
-  "description": "Business",
-  "title": "Business",
+  "id": 1,
+  "description": "A small or highly specialized application",
+  "title": "Widget",
   "_links": {
     "self": {
-      "href": "https://localhost:8443/marketplace/api/category/9"
+      "href": "https://localhost:8443/marketplace/api/type/1"
     }
   }
 }
@@ -37,13 +37,13 @@ Marketplace returns the matching category ID, as shown below. However, if the ID
 
 
 #####<i>How to use it:</i>#####
-Use it to create or identify information about a category or view all category data in Marketplace.  
+Use it to create or identify information about a type or view all types data in Marketplace.  
 
 <hr>
 ###<b>Example</b>###
 
 
-The following is an example of a call to get a category ID:
+The following is an example of a call to get a type ID:
 **???? I don't know how to do this**
 
     This is **NOT** accurate--just placeholder
@@ -76,21 +76,21 @@ The following is an example of a call to get a category ID:
   </thead>
   <tr>
     <td>id</td>
-    <td>The numerical ID associated with the category object.</td> 
+    <td>The numerical ID associated with the type object.</td> 
     </tr>
   <tr>
     <td>description</td>
-    <td>Information about the category that is provided by an administrator.</td> 
+    <td>Information about the type that is provided by an administrator.</td> 
   </tr>
   <tr>
     <td>title</td>
-    <td>The name of the category.</td> 
+    <td>The name of the type.</td> 
   </tr>
   <tr>
     <td>"_links": {<br>
         				"self": { <br>
 					"href":</td>
-    <td>The link that identifies a specific category by ID.</td> 
+    <td>The link that identifies a specific type by ID.</td> 
   </tr>
 </table>
 

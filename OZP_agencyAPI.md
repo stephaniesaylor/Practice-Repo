@@ -1,18 +1,19 @@
 #<b>API Object: marketplace.AgencyResource</b>#
 
 #####<i>Definition:</i> 
-Use the `/agency` API to return a list of agencies in the system. 
+Use the `/agency` API to create, update, read or delete an agency in the system. 
  
 
 #####<i>How it works:</i>#####
-A system makes a call to Marketplace asking for a list of agencies. To make this call, one of the following REST Calls will request an agency media type. **????Is this right?**  
+A system makes a call to Marketplace regarding an agency. To make this call, one of the following REST Calls will request an agency media type. **????Is this right?**  
 
 #####<i>Request URL:</i>#####
 
 https://localhost:8443/marketplace/api/agency 
 
 #####<i>Request Method:</i>#####
-GET, Form_Method:none  **???? where do i find form method?**
+POST, PUT, GET, DELETE 
+Form_Method:none  **???? where do i find form method?**
 
 #####<i>Requirements:</i>#####
 none
@@ -37,7 +38,7 @@ Marketplace returns the matching agency ID, as shown below. However, if the ID i
 
 
 #####<i>How to use it:</i>#####
-Use it to find specific information about an agency or view all agency data in Marketplace.  
+Use it to find, update or delete specific information about an agency or view all agency data in Marketplace.  
 
 <hr>
 ###<b>Example</b>###
@@ -87,8 +88,10 @@ The following is an example of a call to get an agency ID:
     <td>The name of the agency.</td> 
   </tr>
   <tr>
-    <td>links</td>
-    <td>Links associated with the agency.</td> 
+    <td>"_links": {<br>
+        				"self": { <br>
+					"href":</td>
+    <td>The link that identifies a specific agency by ID.</td> 
   </tr>
 </table>
 

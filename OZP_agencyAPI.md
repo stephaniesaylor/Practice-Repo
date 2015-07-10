@@ -1,36 +1,42 @@
-#<b>API Object: marketplace.Agency</b>#
+#API Object: marketplace.Agency#
 
-##<i>Definition</i> 
+##Definition 
 Use the `/agency` API to create, update, read or delete an agency in the system. 
 
 ##Resource Information##
 The following properties appear in the Agency JSON: 
 <table style="width:100%">
-  <thead>
-    <td><b>Parameter</b></td>
-    <td><b>Description</b></td
-  </thead>
-  <tr>
-    <td>id</td>
-    <td>The numerical ID associated with the agency object.</td> 
+    <thead>
+        <tr>
+            <td><b>Parameter</b></td>
+            <td><b>Description</b></td>
+        </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>id</td>
+        <td>The numerical ID associated with the agency object.</td> 
     </tr>
-  <tr>
-    <td>shortName</td>
-    <td>The abbreviation used to identify the agency on listings' short and detailed views.</td> 
-  </tr>
-  <tr>
-    <td>title</td>
-    <td>The name of the agency.</td> 
-  </tr>
-
+    <tr>
+        <td>shortName</td>
+        <td>The abbreviation used to identify the agency on listings' short and detailed views.</td> 
+    </tr>
+    <tr>
+        <td>title</td>
+        <td>The name of the agency.</td> 
+    </tr>
+    </tbody>
 </table>
 
  
-##<i>Request URL</i>###
+##Request URL###
 
-https://localhost:8443/marketplace/api/agency 
+https://localhost:8443/marketplace/api/agency <br>
 
-##<i>Request Methods</i>###
+This placeholder URL will vary depending upon your deployment. Be mindful that "https://localhost:8443/marketplace," is an example base/context/domain where your WAR is deployed.  
+
+
+##Request Methods###
 [POST](https://github.com/stephaniesaylor/Practice-Repo/blob/master/OZP_agencyAPI.md#POST),
 [PUT](https://github.com/stephaniesaylor/Practice-Repo/blob/master/OZP_agencyAPI.md#PUT), 
 [GET](https://github.com/stephaniesaylor/Practice-Repo/blob/master/OZP_agencyAPI.md#GET), [DELETE](https://github.com/stephaniesaylor/Practice-Repo/blob/master/OZP_agencyAPI.md#DELETE)
@@ -38,16 +44,20 @@ https://localhost:8443/marketplace/api/agency
 Each method will be explained in the following sections:
 
 ###<a name=POST>POST</a>####
-<b>Request</b><br>
+Use this call to **create** an agency in the system.
+
+#####Request
 https://localhost:8443/marketplace/api/agency
 
-    {"title":"Test Organization", 
-    "shortName":"TORG"}
+    {  
+        "title":"Test Organization",
+        "shortName":"TORG"
+    }
 
-<b>Response Code:</b>
+#####Response Code:
 201
 
-<b>Response</b> <br>
+#####Response
 
     {
       "id": 1,
@@ -60,27 +70,28 @@ https://localhost:8443/marketplace/api/agency
       }
     }
 
-<b>Requirements</b> <br>
+#####Requirements
 none
 <br>
-<br>
+
 
 
 
 ###<a name=PUT>PUT</a>###
-<b>Request</b>
-<br>
+Use this call to **update** an agency in the system.
+#####Request
 https://localhost:8443/marketplace/api/agency/{id}
 
-    {"id":208,
-    "title":"Updated Agency",
-     "shortName":"sName"}
+    {  
+        "id":208,
+        "title":"Updated Agency",
+        "shortName":"sName"
+    }
 
-<b>Response Code:</b>
+#####Response Code:
 200
 
-<b>Response</b>
-<br>
+#####Response
     
     {
       "id": 1,
@@ -92,22 +103,27 @@ https://localhost:8443/marketplace/api/agency/{id}
         }
       }
     }
-<b>Requirements</b> <br>
+#####Requirements
 none
 <br>
 <br>
 
 
 ###<a name=GET>GET</a>###
-<b>Request</b><br>
-Marketplace returns the matching agency ID, as shown below. However, if the ID is an empty string, Marketplace will return a list of all agencies.
+Use this call to **read or view** an agency or all the agencies in the system.
+#####Request
+If you want to see a list of all the agencies in the system, enter:
+https://localhost:8443/marketplace/api/agency/
 
+However, to view metadata about only one agency, enter:
 https://localhost:8443/marketplace/api/agency/{id}
+ 
+Marketplace returns the representation of the agency that matches the{id}, as shown in the Response for one agency id. 
 
-<b>Response Code:</b>
+#####Response Code:
 200
 
-<b>Response</b>
+#####Response for one agency id
 
     {
        "id":194,
@@ -122,26 +138,29 @@ https://localhost:8443/marketplace/api/agency/{id}
        }
     }
 
-<b>Requirements</b> <br>
+#####Requirements
 none
-<br>Optional: offset, max
+#####Optional Parameters
+If you want to limit the responses, for example, only return 5, you can do so using Optional Parameters which are included in the code as @QueryParam.
+
+**offset**--an integer offset
+**max**--maximum number of agency ids your call will return
 <br>
 <br>
 <br>
 
 ###<a name=DELETE>DELETE</a>###
-<b>Requirements</b>
-<br>https://localhost:8443/marketplace/api/agency/{id}
-<br>
+Use this call to remove an agency from the system.
+#####Requirements
+https://localhost:8443/marketplace/api/agency/{id}
 
-<b>Response Code:</b>
+#####Response Code:
 204
 
-<b>Response</b>
-<br>
+#####Response
 no content<br>    
        
-<b>Requirements</b> <br>
+#####Requirements
 none
 
 <br>
@@ -150,27 +169,38 @@ none
 
 
 
-###<b>Possible Errors</b>###
+###Possible Errors###
 
 This table lists common errors. Other errors may occur but these are the most likely:
 <table style="width:100%">
-  <thead>
-    <td><b>Error</b></td>
-    <td><b>Troubleshooting</b></td>
-  </thead>
-  <tr>
-    <td>Agency cannot be deleted.
-</td>
-    <td>See if it is associated with a listing. If any listing is assigned to an agency, you cannot delete that agency.</td> 
-  </tr>
-  <tr>
-    <td>User cannot create, edit, delete an agency.
-</td>
-    <td>Only administrators can create, edit, delete agencies.</td> 
-  </tr>  
-  <tr>
-    <td>Agency cannot be created or updated.
-</td>
-    <td>The agency must include all required fields.</td> 
-  </tr>
+    <thead>
+        <tr>    
+            <td><b>Error <br> Code</b></td>
+            <td><b>Error</b></td>
+            <td><b>Troubleshooting</b></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>400
+            <td>Agency cannot be deleted.
+            <td>See if it is associated with a listing. If any listing is assigned to an agency, you cannot delete that agency.</td> 
+        </tr>
+        <tr>
+            <td>403
+            <td>User cannot create, edit, delete an agency.
+            <td>Only administrators can create, edit, delete agencies.</td> 
+        </tr>  
+        <tr>
+            <td>400
+            <td>Agency cannot be created or updated.
+            <td>The agency must include all required fields.</td> 
+        </tr>
+        <tr>
+            <td>400
+            <td>Agency must have a unique name.</td>
+            <td>If the agency name is not unique, a validation error occurs when you try to save.</td> 
+        </tr>
+    </tbody>
 </table> 
+

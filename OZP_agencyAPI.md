@@ -1,4 +1,8 @@
-#<b>API Object: marketplace.AgencyResource</b>#
+h4 {
+    color: green;
+   }
+
+#<b>API Object: marketplace.Agency</b>#
 
 ###<i>Definition</i> 
 Use the `/agency` API to create, update, read or delete an agency in the system. 
@@ -14,7 +18,7 @@ https://localhost:8443/marketplace/api/agency
 <br>
 Each method will be explained in the following sections:
 
-####<a name=POST>POST</a>####
+####<span style="color:#6E6E6E"><a name=POST>POST</a></span>####
 <b>Request</b><br>
 https://localhost:8443/marketplace/api/agency
 

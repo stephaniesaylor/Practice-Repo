@@ -1,32 +1,52 @@
-h4 {
-    color: green;
-   }
-
 #<b>API Object: marketplace.Agency</b>#
 
-###<i>Definition</i> 
+##<i>Definition</i> 
 Use the `/agency` API to create, update, read or delete an agency in the system. 
+
+##Resource Information##
+<table style="width:100%">
+  <thead>
+    <td><b>Parameter</b></td>
+    <td><b>Description</b></td
+  </thead>
+  <tr>
+    <td>id</td>
+    <td>The numerical ID associated with the agency object.</td> 
+    </tr>
+  <tr>
+    <td>shortName</td>
+    <td>The abbreviation used to identify the agency on listings' short and detailed views.</td> 
+  </tr>
+  <tr>
+    <td>title</td>
+    <td>The name of the agency.</td> 
+  </tr>
+
+</table>
+
  
-###<i>Request URL</i>###
+##<i>Request URL</i>###
 
 https://localhost:8443/marketplace/api/agency 
 
-###<i>Request Methods</i>###
+##<i>Request Methods</i>###
 [POST](https://github.com/stephaniesaylor/Practice-Repo/blob/master/OZP_agencyAPI.md#POST),
 [PUT](https://github.com/stephaniesaylor/Practice-Repo/blob/master/OZP_agencyAPI.md#PUT), 
 [GET](https://github.com/stephaniesaylor/Practice-Repo/blob/master/OZP_agencyAPI.md#GET), [DELETE](https://github.com/stephaniesaylor/Practice-Repo/blob/master/OZP_agencyAPI.md#DELETE)
 <br>
 Each method will be explained in the following sections:
 
-####<span style="color:#0489B1"><a name=POST>POST</a></span>####
+###<a name=POST>POST</a>####
 <b>Request</b><br>
 https://localhost:8443/marketplace/api/agency
 
     {"title":"Test Organization", 
     "shortName":"TORG"}
 
+<b>Response Code:</b>
+201
+
 <b>Response</b> <br>
-Marketplace returns the matching agency ID, as shown below. However, if the ID is an empty string, Marketplace will return a list of all agencies.
 
     {
       "id": 1,
@@ -46,15 +66,17 @@ none
 
 
 
-####<a name=PUT>PUT</a>####
+###<a name=PUT>PUT</a>###
 <b>Request</b>
 <br>
 https://localhost:8443/marketplace/api/agency/{id}
-<br><i>Note: In this example, we are updating id 208.</i>
 
     {"id":208,
     "title":"Updated Agency",
      "shortName":"sName"}
+
+<b>Response Code:</b>
+200
 
 <b>Response</b>
 <br>
@@ -71,16 +93,18 @@ https://localhost:8443/marketplace/api/agency/{id}
     }
 <b>Requirements</b> <br>
 none
-<br>Optional: offset, max
 <br>
 <br>
 
 
-####<a name=GET>GET</a>####
+###<a name=GET>GET</a>###
 <b>Request</b><br>
+Marketplace returns the matching agency ID, as shown below. However, if the ID is an empty string, Marketplace will return a list of all agencies.
 
 https://localhost:8443/marketplace/api/agency/{id}
-<br><i>Note: In this example, we are reading id 194.</i>
+
+<b>Response Code:</b>
+200
 
 <b>Response</b>
 
@@ -104,42 +128,25 @@ none
 <br>
 <br>
 
-####<a name=DELETE>DELETE</a>####
+###<a name=DELETE>DELETE</a>###
 <b>Requirements</b>
 <br>https://localhost:8443/marketplace/api/agency/{id}
 <br>
 
+<b>Response Code:</b>
+204
+
 <b>Response</b>
 <br>
-nothing<br>    
+no content<br>    
        
-    }
 <b>Requirements</b> <br>
 none
 
 <br>
 <br>
 
-###Resource Information###
-<table style="width:100%">
-  <thead>
-    <td><b>Parameter</b></td>
-    <td><b>Description</b></td
-  </thead>
-  <tr>
-    <td>id</td>
-    <td>The numerical ID associated with the agency object.</td> 
-    </tr>
-  <tr>
-    <td>shortName</td>
-    <td>The abbreviation used to identify the agency on listings' short and detailed views.</td> 
-  </tr>
-  <tr>
-    <td>title</td>
-    <td>The name of the agency.</td> 
-  </tr>
-  
-</table>
+
 
 
 ###<b>Possible Errors</b>###

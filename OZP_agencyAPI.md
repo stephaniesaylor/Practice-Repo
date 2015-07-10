@@ -4,6 +4,7 @@
 Use the `/agency` API to create, update, read or delete an agency in the system. 
 
 ##Resource Information##
+The following properties appear in the Agency JSON: 
 <table style="width:100%">
   <thead>
     <td><b>Parameter</b></td>

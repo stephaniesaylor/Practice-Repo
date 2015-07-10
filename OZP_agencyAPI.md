@@ -18,7 +18,7 @@ https://localhost:8443/marketplace/api/agency
 <br>
 Each method will be explained in the following sections:
 
-####<span style="color:#6E6E6E"><a name=POST>POST</a></span>####
+####<span style="color:#0489B1"><a name=POST>POST</a></span>####
 <b>Request</b><br>
 https://localhost:8443/marketplace/api/agency
 

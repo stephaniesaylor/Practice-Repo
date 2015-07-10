@@ -33,7 +33,7 @@ The following properties appear in the Agency JSON:
 
 https://localhost:8443/marketplace/api/agency <br>
 
-This placeholder URL will vary depending upon your deployment. Be mindful that "https://localhost:8443/marketplace," is an example base/context/domain where your WAR is deployed.  
+This placeholder URL will vary depending upon your deployment. Be mindful that "https://localhost:8443/marketplace," is an example "base/context/domain" where your WAR is deployed.  
 
 
 ##Request Methods###

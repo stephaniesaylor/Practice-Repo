@@ -113,7 +113,7 @@ none
 ###<a name=GET>GET</a>###
 Use this call to **read or view** a type or all the types in the system.
 #####Request
-If you want to see a list of all the agencies in the system, enter:
+If you want to see a list of all the types in the system, enter:
 `https://localhost:8443/marketplace/api/type/`
 
 However, to view metadata about only one type, enter:

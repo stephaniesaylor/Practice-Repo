@@ -1,112 +1,205 @@
 #<b>API Object: marketplace.category</b>#
 
-#####<i>Definition:</i> 
-Use the `/category` API to create or return a category or list of categories in the system. 
+##Definition 
+Use the `/category` API to create, update, read or delete a category or list of categories in the system. 
+
+##Resource Information
+The following properties appear in the Category JSON:
+
+<table style="width:100%">
+    <thead>
+        <tr>
+            <td><b>Parameter</b></td>
+            <td><b>Description</b></td
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>id</td>
+            <td>The numerical ID associated with the category object.</td> 
+        </tr>
+        <tr>
+            <td>description</td>
+            <td>Information about the category that is provided by an administrator.</td> 
+        </tr>
+        <tr>
+            <td>title</td>
+            <td>The name of the category.</td> 
+        </tr>
+    </tbody>
+</table>
  
+##Request URL
 
-#####<i>How it works:</i>#####
-A system makes a call to Marketplace asking to create or view a category or list of categories. To make this call, one of the following REST Calls will request a category media type. **????Is this right?**  
+`https://localhost:8443/marketplace/api/category`
 
-#####<i>Request URL:</i>#####
+This placeholder URL will vary depending upon your deployment. Be mindful that `https://localhost:8443/marketplace` is an example "base/context/domain" where your WAR is deployed.  
 
-https://localhost:8443/marketplace/api/category 
+##Request Methods
+[POST](https://github.com/stephaniesaylor/Practice-Repo/blob/master/OZP_categoryAPI.md#POST),
+[PUT](https://github.com/stephaniesaylor/Practice-Repo/blob/master/OZP_categoryAPI.md#PUT), 
+[GET](https://github.com/stephaniesaylor/Practice-Repo/blob/master/OZP_categoryAPI.md#GET), 
+[DELETE](https://github.com/stephaniesaylor/Practice-Repo/blob/master/OZP_categoryAPI.md#DELETE)
+<br>
+Each method will be explained in the following sections:
 
-#####<i>Request Method:</i>#####
-POST, GET, Form_Method:none  **???? where do i find form method?**
+###<a name=POST>POST</a>
+Use this call to **create** a category in the system.
 
-#####<i>Requirements:</i>#####
+#####Request
+`POST https://localhost:8443/marketplace/api/category`
+
+    {  
+        "title":"News",
+        "description":"This is the News category."
+    }
+
+#####Response Code:
+201
+
+#####Response
+
+    {  
+        "id":65,
+        "description":"This is the News category.",
+        "title":"News",
+        "_links":{  
+            "self":{  
+                "href":"https://localhost:8443/marketplace/api/category/65"
+            }
+        }
+    }
+
+#####Requirements
+none
+<br>
+
+
+
+
+###<a name=PUT>PUT</a>###
+Use this call to **update** a category in the system.
+#####Request
+`PUT https://localhost:8443/marketplace/api/category/{id}`
+
+    {  
+        "id":65,
+        "title":"${News}",
+        "description":"This is the News category."
+    }
+
+#####Response Code:
+200
+
+#####Response
+    
+    {  
+        "id":65,
+        "description":"This is the News category.",
+        "title":"News",
+        "_links":{  
+            "self":{  
+                "href":"https://localhost:8443/marketplace/api/category/65"
+            }
+        }
+    }
+
+#####Requirements
+none
+<br>
+<br>
+
+
+###<a name=GET>GET</a>###
+Use this call to **read or view** a category or all the categories in the system.
+#####Request
+If you want to see a list of all the categories in the system, enter:
+`GET https://localhost:8443/marketplace/api/category/`
+
+However, to view metadata about only one category, enter:
+`GET https://localhost:8443/marketplace/api/category/{id}`
+ 
+Marketplace returns the representation of the category that matches the{id}, as shown in the Response for one category id. 
+
+#####Response Code:
+200
+
+#####Response for one category id
+
+    {  
+        "id":65,
+        "description":"This is the News category.",
+        "title":"News",
+        "_links":{  
+            "self":{  
+                "href":"https://localhost:8443/marketplace/api/category/65"
+            }
+        }
+    }
+
+#####Requirements
+none
+#####Optional Parameters
+If you want to limit the responses, for example, only return 5, use Optional Parameters which are included in the code as `@QueryParam`:
+
+**offset**--an integer offset <br>
+**max**--maximum number of agency ids your call will return
+<br>
+<br>
+<br>
+
+###<a name=DELETE>DELETE</a>###
+Use this call to remove a category from the system.
+#####Requirements
+`DELETE https://localhost:8443/marketplace/api/category/{id}`
+
+#####Response Code:
+204
+
+#####Response
+no content<br>    
+       
+#####Requirements
 none
 
-Optional: offset, max
-
-#####<i>Response:</i>#####
-Marketplace returns the matching category ID, as shown below. However, if the ID is an empty string, Marketplace will return a list of all categories.
-
-{
-  "id": 9,
-  "description": "Business",
-  "title": "Business",
-  "_links": {
-    "self": {
-      "href": "https://localhost:8443/marketplace/api/category/9"
-    }
-  }
-}
+<br>
+<br>
 
 
 
 
-#####<i>How to use it:</i>#####
-Use it to create or identify information about a category or view all category data in Marketplace.  
+###Possible Errors
 
-<hr>
-###<b>Example</b>###
-
-
-The following is an example of a call to get a category ID:
-**???? I don't know how to do this**
-
-    This is **NOT** accurate--just placeholder
-
-    var onSuccess = function(obj) {
-        if (obj.value) {
-            alert(obj.value.namespace);
-        }
-    };
-
-    var onFailure = function(error) {
-        alert(error);
-    };
-
-    OWF.Preferences.getWidget({
-        widgetId:'eb5435cf-4021-4f2a-ba69-dde451d12551',
-        onSuccess:onSuccess,
-        onFailure:onFailure
-    });
-
-    
-
-
-
-###Resource Information###
+This table lists common errors. Other errors may occur but these are the most likely:
 <table style="width:100%">
-  <thead>
-    <td><b>Parameter</b></td>
-    <td><b>Description</b></td
-  </thead>
-  <tr>
-    <td>id</td>
-    <td>The numerical ID associated with the category object.</td> 
-    </tr>
-  <tr>
-    <td>description</td>
-    <td>Information about the category that is provided by an administrator.</td> 
-  </tr>
-  <tr>
-    <td>title</td>
-    <td>The name of the category.</td> 
-  </tr>
-  <tr>
-    <td>"_links": {<br>
-        				"self": { <br>
-					"href":</td>
-    <td>The link that identifies a specific category by ID.</td> 
-  </tr>
-</table>
-
-
-###<b>Possible Errors</b>###
-
-**???? where do i find the errors? NOT ACCURATE**
-<table style="width:100%">
-  <thead>
-    <td><b>Error</b></td>
-    <td><b>Action</b></td>
-  </thead>
-  <tr>
-    <td>This will happen when getWidget is called using a widgetId that doesn't exist.
-HTTP Status 404: “...Widget with guid of undefined not found.”
-</td>
-    <td>Make sure widgetId is set to a non-null string.</td> 
-  </tr> 
+    <thead>
+        <tr>    
+            <td><b>Error <br> Code</b></td>
+            <td><b>Error</b></td>
+            <td><b>Troubleshooting</b></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>400
+            <td>Category cannot be deleted.
+            <td>See if it is associated with a listing. If any listing is assigned to the category, you cannot delete that category.</td> 
+        </tr>
+        <tr>
+            <td>403
+            <td>User cannot create, edit, delete a category.
+            <td>Only administrators can create, edit, delete categories.</td> 
+        </tr>  
+        <tr>
+            <td>400
+            <td>Categories cannot be created or updated.
+            <td>The category must include all required fields.</td> 
+        </tr>
+        <tr>
+            <td>400
+            <td>Category must have a unique name.</td>
+            <td>If the category name is not unique, a validation error occurs when you try to save.</td> 
+        </tr>
+    </tbody>
 </table> 
+

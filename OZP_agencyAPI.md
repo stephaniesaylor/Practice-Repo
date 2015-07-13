@@ -1,4 +1,4 @@
-#API Object: marketplace.Agency#
+#API Object: marketplace.Agency
 
 ##Definition 
 Use the `/agency` API to create, update, read or delete an agency in the system. 
@@ -31,12 +31,12 @@ The following properties appear in the Agency JSON:
  
 ##Request URL###
 
-https://localhost:8443/marketplace/api/agency <br>
+`https://localhost:8443/marketplace/api/agency` <br>
 
-This placeholder URL will vary depending upon your deployment. Be mindful that "https://localhost:8443/marketplace," is an example "base/context/domain" where your WAR is deployed.  
+This placeholder URL will vary depending upon your deployment. Be mindful that `https://localhost:8443/marketplace` is an example "base/context/domain" where your WAR is deployed.  
 
 
-##Request Methods###
+##Request Methods
 [POST](https://github.com/stephaniesaylor/Practice-Repo/blob/master/OZP_agencyAPI.md#POST),
 [PUT](https://github.com/stephaniesaylor/Practice-Repo/blob/master/OZP_agencyAPI.md#PUT), 
 [GET](https://github.com/stephaniesaylor/Practice-Repo/blob/master/OZP_agencyAPI.md#GET), [DELETE](https://github.com/stephaniesaylor/Practice-Repo/blob/master/OZP_agencyAPI.md#DELETE)
@@ -47,7 +47,7 @@ Each method will be explained in the following sections:
 Use this call to **create** an agency in the system.
 
 #####Request
-https://localhost:8443/marketplace/api/agency
+`https://localhost:8443/marketplace/api/agency`
 
     {  
         "title":"Test Organization",
@@ -77,10 +77,10 @@ none
 
 
 
-###<a name=PUT>PUT</a>###
+###<a name=PUT>PUT</a>
 Use this call to **update** an agency in the system.
 #####Request
-https://localhost:8443/marketplace/api/agency/{id}
+`https://localhost:8443/marketplace/api/agency/{id}`
 
     {  
         "id":208,
@@ -109,14 +109,14 @@ none
 <br>
 
 
-###<a name=GET>GET</a>###
+###<a name=GET>GET</a>
 Use this call to **read or view** an agency or all the agencies in the system.
 #####Request
 If you want to see a list of all the agencies in the system, enter:
-https://localhost:8443/marketplace/api/agency/
+`https://localhost:8443/marketplace/api/agency/`
 
 However, to view metadata about only one agency, enter:
-https://localhost:8443/marketplace/api/agency/{id}
+`https://localhost:8443/marketplace/api/agency/{id}`
  
 Marketplace returns the representation of the agency that matches the{id}, as shown in the Response for one agency id. 
 
@@ -141,18 +141,18 @@ Marketplace returns the representation of the agency that matches the{id}, as sh
 #####Requirements
 none
 #####Optional Parameters
-If you want to limit the responses, for example, only return 5, you can do so using Optional Parameters which are included in the code as @QueryParam.
+If you want to limit the responses, for example, only return 5, you can do so using Optional Parameters which are included in the code as `@QueryParam`:
 
-**offset**--an integer offset
+**offset**--an integer offset <br>
 **max**--maximum number of agency ids your call will return
 <br>
 <br>
 <br>
 
-###<a name=DELETE>DELETE</a>###
+###<a name=DELETE>DELETE</a>
 Use this call to remove an agency from the system.
 #####Requirements
-https://localhost:8443/marketplace/api/agency/{id}
+`https://localhost:8443/marketplace/api/agency/{id}`
 
 #####Response Code:
 204
@@ -169,7 +169,7 @@ none
 
 
 
-###Possible Errors###
+###Possible Errors
 
 This table lists common errors. Other errors may occur but these are the most likely:
 <table style="width:100%">

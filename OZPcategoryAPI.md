@@ -1,4 +1,4 @@
-#<b>API Object: marketplace.category</b>#
+#API Object: marketplace.category
 
 ##Definition 
 Use the `/category` API to create, update, read or delete a category or list of categories in the system. 
@@ -143,7 +143,7 @@ none
 If you want to limit the responses, for example, only return 5, use Optional Parameters which are included in the code as `@QueryParam`:
 
 **offset**--an integer offset <br>
-**max**--maximum number of agency ids your call will return
+**max**--maximum number of category ids your call will return
 <br>
 <br>
 <br>

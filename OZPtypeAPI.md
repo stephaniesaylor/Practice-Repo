@@ -1,4 +1,4 @@
-#API Object: marketplace.type#
+#API Object: marketplace.type
 
 ##Definition 
 Use the `/type` API to create, update, read or delete a type or list of types in the system. 
@@ -117,7 +117,7 @@ If you want to see a list of all the agencies in the system, enter:
 `https://localhost:8443/marketplace/api/type/`
 
 However, to view metadata about only one type, enter:
-`https://localhost:8443/marketplace/api/agency/{id}`
+`https://localhost:8443/marketplace/api/type/{id}`
  
 Marketplace returns the representation of the type that matches the{id}, as shown in the Response for one type id. 
 
@@ -143,7 +143,7 @@ none
 If you want to limit the responses, for example, only return 5, use Optional Parameters which are included in the code as `@QueryParam`:
 
 **offset**--an integer offset <br>
-**max**--maximum number of agency ids your call will return
+**max**--maximum number of type ids your call will return
 <br>
 <br>
 <br>

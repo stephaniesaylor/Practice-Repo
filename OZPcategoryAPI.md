@@ -47,7 +47,7 @@ Each method will be explained in the following sections:
 Use this call to **create** a category in the system.
 
 #####Request
-POST `https://localhost:8443/marketplace/api/category`
+`https://localhost:8443/marketplace/api/category`
 
     {  
         "title":"News",
@@ -80,7 +80,7 @@ none
 ###<a name=PUT>PUT</a>###
 Use this call to **update** a category in the system.
 #####Request
-PUT `https://localhost:8443/marketplace/api/category/{id}`
+`https://localhost:8443/marketplace/api/category/{id}`
 
     {  
         "id":65,
@@ -114,10 +114,10 @@ none
 Use this call to **read or view** a category or all the categories in the system.
 #####Request
 If you want to see a list of all the categories in the system, enter:
-GET `https://localhost:8443/marketplace/api/category/`
+`https://localhost:8443/marketplace/api/category/`
 
 However, to view metadata about only one category, enter:
-GET `https://localhost:8443/marketplace/api/category/{id}`
+`https://localhost:8443/marketplace/api/category/{id}`
  
 Marketplace returns the representation of the category that matches the{id}, as shown in the Response for one category id. 
 
@@ -151,7 +151,7 @@ If you want to limit the responses, for example, only return 5, use Optional Par
 ###<a name=DELETE>DELETE</a>###
 Use this call to remove a category from the system.
 #####Requirements
-`DELETE https://localhost:8443/marketplace/api/category/{id}`
+`https://localhost:8443/marketplace/api/category/{id}`
 
 #####Response Code:
 204

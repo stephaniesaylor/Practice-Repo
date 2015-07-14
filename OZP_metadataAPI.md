@@ -1,37 +1,8 @@
 #API Object: marketplace.metadata
 
 ##Definition 
-Use the `/metadata` API to read agency, type, intent, category and contact type in the system. 
+Use the `/metadata` API to read agency, type, intent, category and contact types that appear on Marketplace's Search and Discovery Page. 
 
-##Resource Information
-The metadata API returns data that appears on Marketplace's Search and Discovery Page. The following properties appear in the metadata JSON:
-
-<table style="width:100%">
-    <thead>
-        <tr>
-            <td><b>Parameter</b></td>
-            <td><b>Description</b></td
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>type</td>
-            <td>The expected deliverable of the intent--for example, application/json</td> 
-        </tr>
-        <tr>
-            <td>action</td>
-            <td>What is the intent supposed to do--think of actions as verbs like view, share, edit, etc.</td> 
-        </tr>
-        <tr>
-            <td>label <i>(optional)</i></td>
-            <td>The name used to identify the intent.</td> 
-        </tr>
-        <tr>
-            <td>iconId <i>(optional)</i></td>
-            <td>An icon used to identify the intent--think of the icons that pop up on a smartphone to ask what program you want to use to complete a task (For example: youtube vs. your browser).</td> 
-        </tr>
-    </tbody>
-</table>
  
 ##Request URL
 

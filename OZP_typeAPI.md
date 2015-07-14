@@ -50,7 +50,7 @@ Use this call to **create** a type in the system.
 `https://localhost:8443/marketplace/api/type`
 
     {  
-        "title":"${title}",
+        "title":"Title",
         "description":"This is a description"
     }
 
@@ -84,7 +84,7 @@ Use this call to **update** a type in the system.
 
     {  
         "id":1,
-        "title":"${Widget}",
+        "title":"Widget",
         "description":"This is the widget description."
     }
 

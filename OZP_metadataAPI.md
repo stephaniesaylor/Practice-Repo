@@ -1,10 +1,10 @@
 #API Object: marketplace.metadata
 
 ##Definition 
-Use the `/metadata` API to create, update, read or delete an intent or list of intents in the system. 
+Use the `/metadata` API to read agency, type, intent, category and contact type in the system. 
 
 ##Resource Information
-Intents are the instructions for carrying out a listing's intentions. The following properties appear in the Intent JSON:
+The metadata API returns data that appears on Marketplace's Search and Discovery Page. The following properties appear in the metadata JSON:
 
 <table style="width:100%">
     <thead>
@@ -35,156 +35,284 @@ Intents are the instructions for carrying out a listing's intentions. The follow
  
 ##Request URL
 
-`https://localhost:8443/marketplace/api/intent`
+`https://localhost:8443/marketplace/api/metadata`
 
 This placeholder URL will vary depending upon your deployment. Be mindful that `https://localhost:8443/marketplace` is an example "base/context/domain" where your WAR is deployed.  
 
-##Request Methods
-[POST](https://github.com/stephaniesaylor/Practice-Repo/blob/master/OZP_intentAPI.md#POST),
-[PUT](https://github.com/stephaniesaylor/Practice-Repo/blob/master/OZP_intentAPI.md#PUT), 
-[GET](https://github.com/stephaniesaylor/Practice-Repo/blob/master/OZP_intentAPI.md#GET), 
-[DELETE](https://github.com/stephaniesaylor/Practice-Repo/blob/master/OZP_intentAPI.md#DELETE)
-<br>
-Each method will be explained in the following sections:
-
-###<a name=POST>POST</a>
-Use this call to **create** an intent in the system.
-
-#####Request
-`POST https://localhost:8443/marketplace/api/intent`
-
-    {  
-        "type":"application/json",
-        "action":"Intent",
-        "label":null,
-        "iconId":null
-    }
-
-#####Response Code:
-201
-
-#####Response
-
-    {
-        "id":5,
-        "type":"application/json",
-        "action":"Intent",
-        "label":null,
-        "iconId":null,
-        "icon":null,
-        "_links":
-        {
-            "self":
-            {
-                "href":"https://localhost:8443/marketplace/api/intent/5"
-            }
-        }
-    }
-
-#####Requirements
-none
-<br>
-
-
-###<a name=PUT>PUT</a>
-Use this call to **update** an intent in the system.
-#####Request
-`PUT https://localhost:8443/marketplace/api/intent/{id}`
-
-    {
-         "type": "application/json",
-          "action": "view",
-          "label":"Label",
-          "iconId":"17cd6841-7232-422f-bc8b-60bee0475099"
-    }
-
-
-#####Response Code:
-200
-
-#####Response
-    
-    {
-        "id":32,
-        "type":"application/json",
-        "action":"view",
-        "label":"Label",
-        "iconId":"17cd6841-7232-422f-bc8b-60bee0475099",
-        "icon":"https://localhost:8443/marketplace/api/image/17cd6841-7232-422f-bc8b-60bee0475099.png",
-        "_links":
-        {
-            "self":
-            {
-                "href":"https://localhost:8443/marketplace/api/intent/32"
-            }
-        }
-    }
-
-#####Requirements
-none
-<br>
-<br>
-
+##Request Method
+The `metadata` API only uses the GET method. 
 
 ###<a name=GET>GET</a>###
-Use this call to **read or view** an intent or all the intents in the system.
-#####Request
-If you want to see a list of all the intents in the system, enter:
-`GET https://localhost:8443/marketplace/api/intent/`
+Use this call to **read or view** all the corresponding metadata used on the Search and Discovery Page.
 
-However, to view metadata about only one intent, enter:
-`GET https://localhost:8443/marketplace/api/intent/{id}`
- 
-Marketplace returns the representation of the intent that matches the{id}, as shown in the Response for one intent id. 
+#####Request
+`https://localhost:8443/marketplace/api/metadata/`
+
 
 #####Response Code:
 200
 
-#####Response for one intent id
+#####Response for metadata
 
     {
-      "id": 48,
-      "type": "application10/json",
-      "action": "view10",
-      "label": "label10",
-      "iconId": null,
-      "icon": null,
-      "_links": {
-        "self": {
-          "href": "https://localhost:8443/marketplace/api/intent/48"
-        }
-      }
+    	"_links": {
+    		"curies": {
+    			"href": "http://ozoneplatform.org/docs/rels/{rel}",
+    			"name": "ozp",
+    			"templated": true
+    		},
+    		"ozp:category": {
+    			"href": "https://localhost:8443/marketplace/api/category"
+    		},
+    		"ozp:contact-type": {
+    			"href": "https://localhost:8443/marketplace/api/contactType"
+    		},
+    		"ozp:intent": {
+    			"href": "https://localhost:8443/marketplace/api/intent"
+    		},
+    		"ozp:organization": {
+    			"href": "https://localhost:8443/marketplace/api/agency"
+    		},
+    		"ozp:type": {
+    			"href": "https://localhost:8443/marketplace/api/type"
+    		},
+    		"self": {
+    			"href": "https://localhost:8443/marketplace/api/metadata"
+    		}
+    	},
+    	"_embedded": {
+    		"ozp:category": {
+    			"_links": {
+    				"item": [{
+    					"href": "https://localhost:8443/marketplace/api/category/10"
+    				},
+    				{
+    					"href": "https://localhost:8443/marketplace/api/category/9"
+    				},
+    				{
+    					"href": "https://localhost:8443/marketplace/api/category/1"
+    				}],
+    				"self": {
+    					"href": "https://localhost:8443/marketplace/api/category"
+    				}
+    			},
+    			"_embedded": {
+    				"item": [{
+    					"id": 10,
+    					"description": "Books and Reference",
+    					"title": "Books and Reference",
+    					"_links": {
+    						"self": {
+    							"href": "https://localhost:8443/marketplace/api/category/10"
+    						}
+    					}
+    				},
+    				{
+    					"id": 9,
+    					"description": "Business",
+    					"title": "Business",
+    					"_links": {
+    						"self": {
+    							"href": "https://localhost:8443/marketplace/api/category/9"
+    						}
+    					}
+    				},
+    				{
+    					"id": 1,
+    					"description": "Communication",
+    					"title": "Communication",
+    					"_links": {
+    						"self": {
+    							"href": "https://localhost:8443/marketplace/api/category/1"
+    						}
+    					}
+    		 }
+    		}],
+    		"ozp:contact-type": {
+    			"_links": {
+    				"item": [{
+    					"href": "https://localhost:8443/marketplace/api/contactType/30"
+    				},
+    				{
+    					"href": "https://localhost:8443/marketplace/api/contactType/31"
+    				}],
+    				"self": {
+    					"href": "https://localhost:8443/marketplace/api/contactType"
+    				}
+    			},
+    			"_embedded": {
+    				"item": [{
+    					"id": 30,
+    					"required": true,
+    					"title": "ContactType_8",
+    					"_links": {
+    						"self": {
+    							"href": "https://localhost:8443/marketplace/api/contactType/30"
+    						}
+    					}
+    				},
+    				{
+    					"id": 31,
+    					"required": true,
+    					"title": "ContactType_9",
+    					"_links": {
+    						"self": {
+    							"href": "https://localhost:8443/marketplace/api/contactType/31"
+    						}
+    					}
+    				}],
+    			}
+    		},
+    		"ozp:intent": {
+    			"_links": {
+    				"item": [{
+    					"href": "https://localhost:8443/marketplace/api/intent/48"
+    				},
+    				{
+    					"href": "https://localhost:8443/marketplace/api/intent/50"
+    				}],
+    				"self": {
+    					"href": "https://localhost:8443/marketplace/api/intent"
+    				}
+    			},
+    			"_embedded": {
+    				"item": [{
+    					"id": 48,
+    					"type": "application10/json",
+    					"action": "view10",
+    					"label": "label10",
+    					"iconId": null,
+    					"icon": null,
+    					"_links": {
+    						"self": {
+    							"href": "https://localhost:8443/marketplace/api/intent/48"
+    						}
+    					}
+    				},
+    				{
+    					"id": 50,
+    					"type": "application/json",
+    					"action": "share",
+    					"label": null,
+    					"iconId": null,
+    					"icon": null,
+    					"_links": {
+    						"self": {
+    							"href": "https://localhost:8443/marketplace/api/intent/50"
+    						}
+    					}
+    				}]
+    			}
+    		},
+    		"ozp:organization": {
+    			"_links": {
+    				"item": [{
+    					"href": "https://localhost:8443/marketplace/api/agency/1"
+    				},
+    				{
+    					"href": "https://localhost:8443/marketplace/api/agency/2"
+    				},
+    				{
+    					"href": "https://localhost:8443/marketplace/api/agency/3"
+    				}],
+    				"self": {
+    					"href": "https://localhost:8443/marketplace/api/agency"
+    				}
+    			},
+    			"_embedded": {
+    				"item": [{
+    					"id": 1,
+    					"shortName": "TORG",
+    					"title": "Test Organization",
+    					"_links": {
+    						"self": {
+    							"href": "https://localhost:8443/marketplace/api/agency/1"
+    						}
+    					}
+    				},
+    				{
+    					"id": 2,
+    					"shortName": "TORG2",
+    					"title": "Test 2 Organization",
+    					"_links": {
+    						"self": {
+    							"href": "https://localhost:8443/marketplace/api/agency/2"
+    						}
+    					}
+    				},
+    				{
+    					"id": 3,
+    					"shortName": "JAgency",
+    					"title": "Jmeter Agency",
+    					"_links": {
+    						"self": {
+    							"href": "https://localhost:8443/marketplace/api/agency/3"
+    						}
+    					}
+    				}]
+    			}
+    		},
+    		"ozp:type": {
+    			"_links": {
+    				"item": [{
+    					"href": "https://localhost:8443/marketplace/api/type/1"
+    				},
+    				{
+    					"href": "https://localhost:8443/marketplace/api/type/2"
+    				},
+    				{
+    					"href": "https://localhost:8443/marketplace/api/type/3"
+    				}],
+    				"self": {
+    					"href": "https://localhost:8443/marketplace/api/type"
+    				}
+    			},
+    			"_embedded": {
+    				"item": [{
+    					"id": 1,
+    					"description": "A small or highly specialized application",
+    					"title": "Widget",
+    					"_links": {
+    						"self": {
+    							"href": "https://localhost:8443/marketplace/api/type/1"
+    						}
+    					}
+    				},
+    				{
+    					"id": 2,
+    					"description": "A web app",
+    					"title": "Web Application",
+    					"_links": {
+    						"self": {
+    							"href": "https://localhost:8443/marketplace/api/type/2"
+    						}
+    					}
+    				},
+    				{
+    					"id": 3,
+    					"description": "This is a type that is used for Jmeter testing. It should be removed at the end of a test.",
+    					"title": "Jmeter Type",
+    					"_links": {
+    						"self": {
+    							"href": "https://localhost:8443/marketplace/api/type/3"
+    						}
+    					}
+    				}]
+    			}
+    		}
+    	}
     }
+   
+
+
+
+
+
 
 #####Requirements
 none
-#####Optional Parameters
-If you want to limit the responses, for example, only return 5, use Optional Parameters which are included in the code as `@QueryParam`:
-
-**offset**--an integer offset <br>
-**max**--maximum number of intent ids your call will return
 <br>
 <br>
-<br>
-
-###<a name=DELETE>DELETE</a>
-Use this call to remove an intent from the system.
-#####Requirements
-`DELETE https://localhost:8443/marketplace/api/type/{id}`
-
-#####Response Code:
-204
-
-#####Response
-no content<br>    
-       
-#####Requirements
-none
-
-<br>
-<br>
-
-
 
 
 ###Possible Errors
@@ -201,18 +329,8 @@ This table lists common errors. Other errors may occur but these are the most li
     <tbody>
         <tr>
             <td>400
-            <td>Intent cannot be deleted.
-            <td>See if it is associated with a listing. If any listing is using the intent, you cannot delete that intent.</td> 
-        </tr>
-        <tr>
-            <td>403
-            <td>User cannot create, edit, delete an intent.
-            <td>Only administrators can create, edit, delete intents.</td> 
-        </tr>  
-        <tr>
-            <td>400
-            <td>The intent cannot be created or updated.
-            <td>The intent must include all required fields.</td> 
+            <td>Create or Delete
+            <td>The metadata API only GETs data. You cannot create, update or delete it.</td> 
         </tr>
     </tbody>
 </table> 

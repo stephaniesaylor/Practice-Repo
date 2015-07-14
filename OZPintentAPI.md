@@ -51,7 +51,7 @@ Each method will be explained in the following sections:
 Use this call to **create** an intent in the system.
 
 #####Request
-`POST https://localhost:8443/marketplace/api/intent`
+`https://localhost:8443/marketplace/api/intent`
 
     {  
         "type":"application/json",
@@ -89,7 +89,7 @@ none
 ###<a name=PUT>PUT</a>
 Use this call to **update** an intent in the system.
 #####Request
-`PUT https://localhost:8443/marketplace/api/intent/{id}`
+`https://localhost:8443/marketplace/api/intent/{id}`
 
     {
          "type": "application/json",
@@ -130,10 +130,10 @@ none
 Use this call to **read or view** an intent or all the intents in the system.
 #####Request
 If you want to see a list of all the intents in the system, enter:
-`GET https://localhost:8443/marketplace/api/intent/`
+`https://localhost:8443/marketplace/api/intent/`
 
 However, to view metadata about only one intent, enter:
-`GET https://localhost:8443/marketplace/api/intent/{id}`
+`https://localhost:8443/marketplace/api/intent/{id}`
  
 Marketplace returns the representation of the intent that matches the{id}, as shown in the Response for one intent id. 
 
@@ -170,7 +170,7 @@ If you want to limit the responses, for example, only return 5, use Optional Par
 ###<a name=DELETE>DELETE</a>
 Use this call to remove an intent from the system.
 #####Requirements
-`DELETE https://localhost:8443/marketplace/api/type/{id}`
+`https://localhost:8443/marketplace/api/type/{id}`
 
 #####Response Code:
 204

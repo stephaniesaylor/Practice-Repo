@@ -47,7 +47,7 @@ Each method will be explained in the following sections:
 Use this call to **create** a contact type in the system.
 
 #####Request
-`POST https://localhost:8443/marketplace/api/contactType`
+`https://localhost:8443/marketplace/api/contactType`
 
     {  
         "title":"Office phone number",
@@ -82,7 +82,7 @@ none
 ###<a name=PUT>PUT</a>###
 Use this call to **update** a contact type in the system.
 #####Request
-`PUT https://localhost:8443/marketplace/api/contactType/{id}`
+`https://localhost:8443/marketplace/api/contactType/{id}`
 
     {  
         "id":12,
@@ -116,10 +116,10 @@ none
 Use this call to **read or view** a contact type or all the contact types in the system.
 #####Request
 If you want to see a list of all the contact types in the system, enter:
-`GET https://localhost:8443/marketplace/api/contactType/`
+`https://localhost:8443/marketplace/api/contactType/`
 
 However, to view metadata about only one contact type, enter:
-`GET https://localhost:8443/marketplace/api/contactType/{id}`
+`https://localhost:8443/marketplace/api/contactType/{id}`
  
 Marketplace returns the representation of the contact type that matches the{id}, as shown in the Response for one contact type id. 
 
@@ -153,7 +153,7 @@ If you want to limit the responses, for example, only return 5, use Optional Par
 ###<a name=DELETE>DELETE</a>###
 Use this call to remove a contact type from the system.
 #####Requirements
-`DELETE https://localhost:8443/marketplace/api/contactType/{id}`
+`https://localhost:8443/marketplace/api/contactType/{id}`
 
 #####Response Code:
 204

@@ -50,7 +50,7 @@ Use this call to **create** a contact type in the system.
 `https://localhost:8443/marketplace/api/contactType`
 
     {  
-        "title":"Office phone number",
+        "title":"Technical Contact",
         "required":false
     }
 
@@ -63,14 +63,13 @@ Use this call to **create** a contact type in the system.
     {  
         "id":5,
         "required":false,
-        "title":"Office phone number",
+        "title":"Technical Contact",
         "_links":{  
             "self":{  
                 "href":"https://localhost:8443/marketplace/api/contactType/5"
             }
         }
     }
-
 
 #####Requirements
 none
@@ -95,16 +94,16 @@ Use this call to **update** a contact type in the system.
 
 #####Response
     
-{  
-    "id":12,
-    "required":false,
-    "title":"Title",
-    "_links":{  
-        "self":{  
-            "href":"https://localhost:8443/marketplace/api/contactType/12"
+    {  
+        "id":12,
+        "required":false,
+        "title":"Title",
+        "_links":{  
+            "self":{  
+                "href":"https://localhost:8443/marketplace/api/contactType/12"
+            }
         }
     }
-}
 
 #####Requirements
 none
@@ -127,17 +126,16 @@ Marketplace returns the representation of the contact type that matches the{id},
 200
 
 #####Response for one contact type id
-    {
-      "id": 30,
-      "required": true,
-      "title": "ContactType_8",
-      "_links": {
-        "self": {
-          "href": "https://localhost:8443/marketplace/api/contactType/30"
+    {  
+        "id":30,
+        "required":true,
+        "title":"ContactType_8",
+        "_links":{  
+            "self":{  
+                "href":"https://localhost:8443/marketplace/api/contactType/30"
+            }
         }
-      }
     }
-
 
 #####Requirements
 none
@@ -145,7 +143,11 @@ none
 If you want to limit the responses, for example, only return 5, use Optional Parameters which are included in the code as `@QueryParam`:
 
 **offset**--an integer offset <br>
+Example: `https://localhost:8443/marketplace/api/contactType?offset=5`
+
 **max**--maximum number of contact type ids your call will return
+Example: `https://localhost:8443/marketplace/api/contactType?max=5`
+
 <br>
 <br>
 <br>
@@ -182,11 +184,6 @@ This table lists common errors. Other errors may occur but these are the most li
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>400
-            <td>Contact Type cannot be deleted.
-            <td>See if it is associated with a listing. If any listing is using a contact type, you cannot delete that contact type.</td> 
-        </tr>
         <tr>
             <td>403
             <td>User cannot create, edit, delete a contact type.

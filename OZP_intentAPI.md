@@ -162,7 +162,11 @@ none
 If you want to limit the responses, for example, only return 5, use Optional Parameters which are included in the code as `@QueryParam`:
 
 **offset**--an integer offset <br>
+Example: `https://localhost:8443/marketplace/api/intent?offset=5`
+
 **max**--maximum number of intent ids your call will return
+Example: `https://localhost:8443/marketplace/api/intent?max=5`
+
 <br>
 <br>
 <br>

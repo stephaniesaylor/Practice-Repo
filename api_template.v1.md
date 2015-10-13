@@ -33,7 +33,7 @@ You can use the User Preference APIs find (GET) a current user's information (MA
     <td><b>Response Description and Example</b></td>
   </thead>
   <tr>
-    <td><b><a href=https://github.com/stephaniesaylor/Practice-Repo/blob/master/deleteUserPreference.md>"OWF.Preferences.deleteUserPreference(cfg)"</a></b></td>
+    <td><b><a href=https://github.com/ozone-development/ozp-rest/blob/master/deleteUserPreference.md>"OWF.Preferences.deleteUserPreference(cfg)"</a></b></td>
     <td> The preference was deleted.
     <br>
     var cfg = { <br>
@@ -47,11 +47,11 @@ You can use the User Preference APIs find (GET) a current user's information (MA
         
   </tr>
   <tr>
-    <td><b><a href=https://github.com/stephaniesaylor/Practice-Repo/blob/master/doesUserPreferenceExist.md>"OWF.Preferences.doesUserPreferenceExist(cfg)"</a></b></td></td>
+    <td><b><a href=https://github.com/ozone-development/ozp-rest/blob/master/doesUserPreferenceExist.md>"OWF.Preferences.doesUserPreferenceExist(cfg)"</a></b></td></td>
     <td> {"preferenceExist":true,"statusCode":200}</td> 
   </tr>
   <tr>
-    <td><b><a href=https://github.com/stephaniesaylor/Practice-Repo/blob/master/getUserPreference.md>"OWF.Preferences.getUserPreference(cfg)"</a></b></td>
+    <td><b><a href=https://github.com/ozone-development/ozp-rest/blob/master/getUserPreference.md>"OWF.Preferences.getUserPreference(cfg)"</a></b></td>
     <td>{
 	"<b>id</b>":157,<br>
 	"<b>namespace</b>":"foo.bar.0",<br>
@@ -64,7 +64,7 @@ You can use the User Preference APIs find (GET) a current user's information (MA
  </td> 
   </tr>
   <tr>
-    <td><b><a href=https://github.com/stephaniesaylor/Practice-Repo/blob/master/setUserPreference.md>"OWF.Preferences.setUserPreference(cfg)"</a></b></td>
+    <td><b><a href=https://github.com/ozone-development/ozp-rest/blob/master/setUserPreference.md>"OWF.Preferences.setUserPreference(cfg)"</a></b></td>
     <td>Returns the preference that was set. <br>
     {
 	"<b>id</b>":157,<br>
@@ -88,11 +88,11 @@ You can use the Widget APIs to get specific information about a widget, find a w
     <td><b>Response Description and Example</b></td>
   </thead>
   <tr>
-    <td><b><a href=https://github.com/stephaniesaylor/Practice-Repo/blob/master/findWidget.md>"OWF.Preferences.findWidget(cfg)"</a></b></td>
+    <td><b><a href=https://github.com/ozone-development/ozp-rest/blob/master/findWidget.md>"OWF.Preferences.findWidget(cfg)"</a></b></td>
     <td>The whole widgetID (this includes all of the widgets metadata) for every widget in the system.</b></td>
   </tr>
   <tr>
-    <td><b><a href=https://github.com/stephaniesaylor/Practice-Repo/blob/master/getWidget.md>"OWF.Preferences.getWidget(cfg)"</a></b></td>
+    <td><b><a href=https://github.comozone-development/ozp-rest/blob/master/getWidget.md>"OWF.Preferences.getWidget(cfg)"</a></b></td>
     <td>The whole widgetID (this includes all of the widgets metadata)</td> 
   </tr>
   <tr>
